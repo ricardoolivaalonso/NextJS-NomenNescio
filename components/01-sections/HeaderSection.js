@@ -41,8 +41,10 @@ export default function HeaderSection({collections}){
 						<a className='settings-menu__link'>search</a>
 					</li>
 					<li className='settings-menu__link'>
-						<a className='settings-menu__link' onClick={()=>dispatch(OPEN_MODAL_ACTION())}>basket</a>
-						<span className={`settings-menu__counter ${cart.length > 0 ? 'is-cart-active' : ''}`}>({cart.length})</span>
+						<a className='settings-menu__link' onClick={()=>dispatch(OPEN_MODAL_ACTION())}>
+							basket
+							<span className={`settings-menu__counter ${cart.length > 0 ? 'is-cart-active' : ''}`}>({cart.length})</span>
+						</a>
 					</li>
 				</ul>
 			</nav>
