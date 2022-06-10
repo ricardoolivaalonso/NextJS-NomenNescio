@@ -20,8 +20,8 @@ export default function ProductsPage({products}) {
 }
 
 export async function getStaticProps(){
-    const req = await fetch('http://localhost:3000/api/products')
-    const products = await req.json()
+    // const req = await fetch('http://localhost:3000/api/products')
+    // const products = await req.json()
     
     return {
         props: { products }
@@ -29,9 +29,9 @@ export async function getStaticProps(){
 }
 
 export async function getStaticPaths(){
-    const req = await fetch('http://localhost:3000/api/products')
-    const data = await req.json()
-    // const data = products
+    // const req = await fetch('http://localhost:3000/api/products')
+    // const data = await req.json()
+    const data = products
 
     const paths = Object.keys(data).map( p => {
         return {

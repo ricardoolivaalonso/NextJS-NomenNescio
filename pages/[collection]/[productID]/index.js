@@ -50,8 +50,8 @@ export default function ProductCardComponent({products}){
 }
 
 export async function getStaticProps({params}){
-    const req = await fetch(`http://localhost:3000/api/products`)
-    const products = await req.json()
+    // const req = await fetch(`http://localhost:3000/api/products`)
+    // const products = await req.json()
     
     return {
         props: { products }
@@ -59,8 +59,8 @@ export async function getStaticProps({params}){
 }
 
 export async function getStaticPaths(){
-    const req = await fetch(`http://localhost:3000/api/products`)
-    const products = await req.json()
+    // const req = await fetch(`http://localhost:3000/api/products`)
+    // const products = await req.json()
 
     const paths = Object.keys(products).map( pro => (
         products[pro].map( p => {

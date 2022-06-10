@@ -14,8 +14,8 @@ export default function HomePage({collections}) {
 }
 
 export async function getStaticProps(){
-    const req = await fetch('http://localhost:3000/api/collections')
-    const collections = await req.json()
+    // const req = await fetch('http://localhost:3000/api/collections')
+    // const collections = await req.json()
 
     return {
         props: { collections }
