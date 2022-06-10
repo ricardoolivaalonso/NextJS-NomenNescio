@@ -1,0 +1,86 @@
+.review{
+    &__item{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        height: 100%;
+
+        @media (max-width: $mq-tablet) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+        &__bg{ 
+            overflow-y: scroll; 
+            scrollbar-width: 0;
+            &::-webkit-scrollbar { width: 0px; }
+            cursor: zoom-in;
+        }
+            &__filter{
+                display: grid;
+                place-items: center;
+                width: 100%;
+                height: 100%;
+                background-color: $image;
+            }
+                &__img{
+                    max-width: 100%;
+                    object-fit: cover;
+                    object-position: top center;
+                }
+
+        &__info{
+            display: grid;
+            justify-content: start;
+            align-items: center;
+            padding: var(--gap);
+            padding-left: calc(var(--gap)*2);
+
+            @media (max-width: $mq-tablet) {
+                justify-content: center;
+            }
+            
+            &-wrapper{
+                display: grid;
+                gap: 10px;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+                &-name{ 
+                    @include fname();
+                    text-transform: capitalize;
+                }
+                &-price{
+                    @include fprice();
+                    color: rgba($fontBase, .85);
+
+                    &::after{
+                        content: '€';
+                        display: inline-block;
+                    }
+                }
+                &-description{
+                    @include fbase();
+                    color: rgba($fontBase, .5);
+                    line-height: 1.4;
+                }
+                &-button{
+                    @include fbase();
+
+                    width: 100%;
+                    height: 50px;
+                    margin: 10px 0 40px;
+
+                    background-color: $fontBase;
+                    color: $backgorund;
+
+                    &:hover{
+                        background-color: darken($fontBase, 10);
+                    }
+                }
+                &-back{
+                    text-decoration: underline;
+                }
+        }
+}

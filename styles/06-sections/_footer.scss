@@ -1,0 +1,37 @@
+.footer{
+    width: 100%;
+    padding: var(--gap);
+
+    &__copy{ 
+        grid-area: copy; 
+        white-space: nowrap;
+
+        @media (max-width: $mq-tablet) { 
+            text-align: center;
+        }
+    }
+    &__social{
+        grid-area: social;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: start;
+        gap: var(--gap);
+
+        @media (max-width: $mq-tablet) { 
+            justify-content: center;
+        }
+    }
+    &__credits{ 
+        grid-area: credits; 
+        display: grid;
+        justify-content: end;
+
+        @media (max-width: $mq-tablet) { 
+            display: none;
+        }
+    }
+        &__item{ 
+            @include ffooter(); 
+            text-transform: capitalize;
+        }
+}

@@ -1,0 +1,17 @@
+body{
+    font-family: 'Nomen', sans-serif;
+    font-size: 16px;
+    background-color: $backgorund;
+}
+a,
+button{
+    cursor: pointer;
+}
+a{
+    transition: color $transition;
+
+    &:hover{ 
+        color: $fontHover;
+        transition: color $transition;
+    }
+}

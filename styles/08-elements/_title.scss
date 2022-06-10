@@ -1,0 +1,14 @@
+.title{
+    @include fbase();
+    text-transform: capitalize;
+    
+    @media (max-width: $mq-tablet) {
+        position: relative;
+        font-weight: 600;
+    }
+
+    &--sticky{ 
+        position: sticky; 
+        top: 50%;
+    }
+}

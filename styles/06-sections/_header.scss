@@ -1,0 +1,60 @@
+.header{
+    --gap-h: 13px;
+
+    &__logo{
+        @include fbase();
+        grid-area: logo;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: start;
+        gap: calc(var(--gap-h)/2);
+        padding-right: var(--gap-h);
+        white-space: nowrap;
+
+        @media (max-width: $mq-tablet) { 
+
+            h1{display: none;}
+         }
+
+    }
+}
+
+.main-menu{
+    grid-area: main;
+
+    &__list{
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: start;
+        gap: var(--gap);
+
+        @media (max-width: $mq-tablet) { 
+            justify-content: end;
+        }
+    }
+    &__link{ 
+        text-transform: capitalize;
+        @include fbase();
+
+        &--active{ color: $accent; }
+    }
+}
+
+.settings-menu{
+    grid-area: settings;
+    @media (max-width: $mq-tablet) { display: none; }
+    
+    &__list,
+    &__link{
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: end;
+        gap: var(--gap);
+    }
+    &__link{
+        position: relative;
+        @include fbase();
+        text-transform: capitalize;
+        gap: calc(var(--gap-h)/2);
+    }
+}

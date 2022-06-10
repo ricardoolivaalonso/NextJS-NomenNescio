@@ -1,0 +1,34 @@
+.is-cart-hidden{
+    visibility: hidden;
+}
+.is-item-added{
+    animation: is-item-added 250ms linear;
+    animation-iteration-count: 1;
+}
+.is-cart-active{
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -5px;
+        width: 10px;
+        height: 10px;
+        background-color: $accent;
+        border-radius: 50%;
+    }
+}
+
+@keyframes is-item-added {
+    0%, 50%{
+        background-color: rgba(cyan, .25);
+        opacity: .45;
+        height: 0;
+        overflow: hidden;
+
+    }
+    100%{
+        background-color: transparent;
+        opacity: 1;
+        height: auto;
+    }
+}
