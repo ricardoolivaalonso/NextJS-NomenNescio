@@ -1,7 +1,7 @@
-import CollectionCardComponent from "../02-components/CollectionCardComponent"
-import TitlElement from "../03-elements/TitleElement"
+import { CollectionCardComponent } from "../02-components/CollectionCardComponent"
+import { TitlElement } from "../03-elements/TitleElement"
 
-export default function CollectionSection({collections}){
+export const CollectionSection = ({collections}) => {
     return(
         <section className="collection">
             {
@@ -10,7 +10,6 @@ export default function CollectionSection({collections}){
                         <div className="collection-info">
                             <TitlElement mod="title--sticky">{col.name}</TitlElement>
                         </div>
-
                         <div className="collection__list">
                             { col.items.map( c => <CollectionCardComponent data={c} key={c.id}/> ) }
                         </div>    

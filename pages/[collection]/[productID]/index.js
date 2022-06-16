@@ -26,7 +26,6 @@ export default function ProductCardComponent({products}){
  
     return(
         <section className='review'>
-
             <div className='review__item' >
                 <div className='review__bg' style={{backgroundImage: `url(${item.image})`}}>
                     <div className='review__filter' >
@@ -44,7 +43,6 @@ export default function ProductCardComponent({products}){
                     </div>
                 </div>
             </div>
-  
         </section>
     )
 }
@@ -52,16 +50,15 @@ export default function ProductCardComponent({products}){
 export async function getStaticProps({params}){
     // const req = await fetch(`http://localhost:3000/api/products`)
     // const products = await req.json()
-    
     return {
-        props: { products }
+        props: { products },
+        revalidate: 86400
     }
 }
 
 export async function getStaticPaths(){
     // const req = await fetch(`http://localhost:3000/api/products`)
     // const products = await req.json()
-
     const paths = Object.keys(products).map( pro => (
         products[pro].map( p => {
             return {
@@ -73,7 +70,6 @@ export async function getStaticPaths(){
         })
     )).flat()
 
-  
 	return {
 		paths,
 		fallback: false

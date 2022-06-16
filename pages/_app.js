@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import HeaderSection from '../components/01-sections/HeaderSection'
-import CartSection from '../components/01-sections/CartSection'
+import { HeaderSection } from '../components/01-sections/HeaderSection'
+import { CartSection } from '../components/01-sections/CartSection'
 import { NomeProvider } from '../context/store'
 import '../styles/styles.scss'
 

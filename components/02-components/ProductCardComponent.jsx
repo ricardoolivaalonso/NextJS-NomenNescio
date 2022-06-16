@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default function ProductCardComponent({data, collection}){
+export const ProductCardComponent = ({data, collection}) => {
     return(
         <article className="product-item" key={data.id}>
             <Link href={`/${collection}/${data.slug}`} >

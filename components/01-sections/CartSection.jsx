@@ -1,6 +1,5 @@
 import { useContext } from "react"
 import { 
-    OPEN_MODAL_ACTION,
     CLOSE_MODAL_ACTION,
     RESET_CART_ACTION,
     ADD_ITEM_ACTION,
@@ -9,7 +8,7 @@ import {
 } from "../../context/actions"
 import { NomeContext } from "../../context/store"
 
-export default function CartSection(){
+export const CartSection = () => {
     const [state, dispatch] = useContext(NomeContext)
     const { cart, open } = state
 

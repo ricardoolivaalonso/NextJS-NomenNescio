@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default function CollectionCardComponent({data}){
+export const CollectionCardComponent = ({data}) => {
     return(
         <article className="collection-item" key={data.id}>
             <Link href={`/mens`}>

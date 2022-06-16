@@ -1,4 +1,4 @@
-export default function FooterSection(){
+export const FooterSection = () => {
     return(
        <footer className="footer">
             <div className="footer__copy">

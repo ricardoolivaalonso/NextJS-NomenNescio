@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import FooterSection from '../../components/01-sections/FooterSection'
-import ProductSection from '../../components/01-sections/ProductSection'
+import { FooterSection } from '../../components/01-sections/FooterSection'
+import { ProductSection } from '../../components/01-sections/ProductSection'
 import { products } from '../../data/products'
 
 export default function ProductsPage({products}) {
@@ -22,9 +22,9 @@ export default function ProductsPage({products}) {
 export async function getStaticProps(){
     // const req = await fetch('http://localhost:3000/api/products')
     // const products = await req.json()
-    
     return {
-        props: { products }
+        props: { products },
+        revalidate: 86400
     }
 }
 
@@ -35,7 +35,7 @@ export async function getStaticPaths(){
 
     const paths = Object.keys(data).map( p => {
         return {
-            params: { collection: `${p}` } 
+            params: { collection: `${p}` },
         }
     })
 

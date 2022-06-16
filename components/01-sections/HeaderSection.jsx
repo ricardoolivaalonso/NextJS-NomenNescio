@@ -3,8 +3,9 @@ import { useRouter } from 'next/router'
 import { useContext } from "react"
 import { OPEN_MODAL_ACTION } from "../../context/actions"
 import { NomeContext } from "../../context/store"
+import { LogoElement } from '../03-elements/LogoElement'
 
-export default function HeaderSection({collections}){
+export const HeaderSection = ({collections}) => {
 	const router = useRouter()
 	const { collection } = router.query
 	const [state, dispatch] = useContext(NomeContext)
@@ -14,11 +15,7 @@ export default function HeaderSection({collections}){
 
     return(
         <header className='header'>
-			<Link href="/">
-				<a className='header__logo'>
-					∏ <h1>Nomen Nescio</h1>
-				</a>
-			</Link>
+			<LogoElement />
 
 			<nav className='main-menu'>
 				<ul className='main-menu__list'>
@@ -31,7 +28,6 @@ export default function HeaderSection({collections}){
 							</li>	
 						)
 					}
-					
 				</ul>
 			</nav>
 
